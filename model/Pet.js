@@ -1,15 +1,31 @@
 const { model, Schema } = require("mongoose");
+const Owner = require("../model/Owner");
 
 const petSchema = new Schema(
   {
-    name: String,
-    species: String,
-    age: String,
-    weight: String,
-    imgUrl: String,
-    OwnerId: {
+    name: {
+      type: String,
+      required: [true, "name is required"],
+    },
+    species: {
+      type: String,
+      required: [true, "species is required"],
+    },
+    age: {
+      type: String,
+      required: [true, "age is required"],
+    },
+    weight: {
+      type: String,
+      required: [true, "weight is required"],
+    },
+    imgUrl: {
+      type: String,
+      required: [true, "imgUrl is required"],
+    },
+    Owner: {
       type: Schema.Types.ObjectId,
-      ref: "Ownerdb",
+      ref: "Owner",
     },
   },
   { collection: "Petdb" }
