@@ -1,6 +1,13 @@
 {
     "Artikel": [
-        {}
+        {
+            "DoctorId": 1,
+            "headline": "",
+            "summary": "",
+            "imgUrl": "",
+            "description": "",
+            "source": []
+        }
     ],
     "Obat": [
         {}
@@ -10,5 +17,8 @@
     ],
     "User": [
         {}
+    ],
+    "Doctor": [
+
     ]
 }
