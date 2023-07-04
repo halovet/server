@@ -44,7 +44,7 @@
             "username": "staff1",
             "email": "staff1@mail.com",
             "password": "12356",
-            "role": "staff"
+            "role": "user"
         }
     ],
     "Doctor": [
