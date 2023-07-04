@@ -1,24 +1,104 @@
 {
     "Artikel": [
         {
+            "headline": "Tips Merawat Hewan Peliharaan yang Sudah Tua",
             "DoctorId": 1,
-            "headline": "",
-            "summary": "",
-            "imgUrl": "",
-            "description": "",
-            "source": []
+            "imgUrl": "https://asset.kompas.com/crops/DyWINUGGJqwWY51mhTm…/1200x800/data/photo/2020/11/28/5fc1ee8796128.jpg",
+            "description": "Setiap makhluk hidup pastinya akan mejadi tua seiring waktu. Dan, hal itu juga berlaku bagi hewan peliharaan kita.\n Hewan peliharaan seperti kucing dan anjing yang menua akan kehilangan penglihatan dan pendengaran, dan tidak akan selincah sebelumnya. \n 'Sama seperti manusia, kebanyakan hewan ingin memiliki tempat yang nyaman untuknya, terutama saat sudah tua,' ujar Hyunmin Kim, DVM, dokter hewan di American Society for the Prevention of Cruelty to Animals (ASPCA). \n Karenanya, pemilik hewan juga sebaiknya memberi perhatian dan perlakuan khusus bagi  hewan-hewan yang lanjut usia. Bagaimana caranya? Merancang zona aman bagi hewan di dalam rumah",
+            "source": ["Martha Stewart"]
         }
     ],
     "Obat": [
-        {}
+        {
+            "name": "Drontal - Obat Cacing 500mg",
+            "category": "Antelmintik",
+            "imgUrl": "https://images.tokopedia.net/img/cache/500-square/VqbcmM/2021/6/8/096d94bd-48fb-4d74-9d55-033e4fea8128.jpg",
+            "price": 50000,
+            "minQuantity": "1 tablet per 10 kg berat badan"
+        },
+        {
+            "name": "Miu Drop - Obat Antibiotik 250mg",
+            "category": "Antibiotik",
+            "imgUrl": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//96/MTA-35603519/miu_drops_antibiotik_miu_drop_30_ml_-_antibiotik_kucing_kitten_-_obat_infeksi_pencernaan_dan_pernapasan_full01_t34cq3zw.jpg",
+            "price": 75000,
+            "minQuantity": "1 tablet setiap 12 jam"
+        }
     ],
     "Appoinment": [
-        {}
+        {
+            "DoctorId": 1,
+            "PetId": 1,
+            "OwnerId": 1,
+            "schedule": "2023-07-05 10:00",
+            "description": "Hewan peliharaan mengalami muntah-muntah selama 2 hari terakhir"
+        }
     ],
     "User": [
-        {}
+        {
+            "username": "admin1",
+            "email": "admin1@mail.com",
+            "password": "123456",
+            "role": "admin"
+        },
+        {
+            "username": "staff1",
+            "email": "staff1@mail.com",
+            "password": "12356",
+            "role": "staff"
+        }
     ],
     "Doctor": [
-
+        {
+            "email": "doctor@example.com",
+            "password": "doc123",
+            "name": "Dr. John Smith",
+            "address": "Jl. Sudirman No. 123, Jakarta Pusat, 10210",
+            "clinic": "ABC Animal Clinic",
+            "price": 500000,
+            "imgUrl": "https://pbs.twimg.com/profile_images/759087511356313604/OJ0w7WIS_400x400.jpg"
+        },
+        {
+            "email": "doctor2@example.com",
+            "password": "pass456",
+            "name": "Dr. Jane Doe",
+            "address": "Jl. Thamrin No. 456, Jakarta Selatan, 12345",
+            "clinic": "XYZ Veterinary Hospital",
+            "price": 500000,
+            "imgUrl": "https://stratisky.com/medicare/wp-content/uploads/2017/05/doctor-dummy.jpg"
+        }
+    ],
+    "Pet": [
+        {
+            "name": "Bella",
+            "species": "Dog",
+            "age": "3 years",
+            "weight": "12 kg",
+            "OwnerId": 1,
+            "imgUrl": "https://images.unsplash.com/photo-1558788353-f76d92427f16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nJTIwcG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
+        },
+        {
+            "name": "Simba",
+            "species": "Cat",
+            "age": "2 years",
+            "weight": "4 kg",
+            "OwnerId": 2,
+            "imgUrl": "https://images.unsplash.com/photo-1608848461950-0fe51dfc41cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80"
+        }
+    ],
+    "Owner": [
+        {
+            "username": "john_doe",
+            "email": "johndoe@example.com",
+            "password": "password123",
+            "phoneNumber": "123-456-7890",
+            "address": "Jl. Sudirman No. 123, Jakarta Pusat, 10210"
+        },
+        {
+            "username": "jane_smith",
+            "email": "janesmith@example.com",
+            "password": "pass456",
+            "phoneNumber": "987-654-3210",
+            "address": "Jl. Thamrin No. 456, Jakarta Selatan, 12345"
+        }
     ]
 }
