@@ -1,5 +1,6 @@
 const { comparePassword, signToken } = require("../helpers/helper");
 const User = require("../model/User");
+const Medicine = require("../model/Medicine");
 
 module.exports = class StaffController {
   static async userRegister(req, res, next) {
@@ -45,6 +46,26 @@ module.exports = class StaffController {
       const token = signToken(payload);
 
       res.status(200).json({ username: user.username, access_token: token });
+    } catch (error) {
+      console.log(error);
+      next(error);
+    }
+  }
+
+  static async createMedicine(req, res, next) {
+    try {
+      const { name, category, imgUrl, price, minQuantity } = req.body;
+
+      if (!name) throw { name: "Name Empty" };
+      if (!category) throw { name: "Category Empty" };
+      if (!imgUrl) throw { name: "Image Empty" };
+      if (!price) throw { name: "Price Empty" };
+      if (!minQuantity) throw { name: "Quantity Empty" };
+
+      const medicine = new Medicine(req.body);
+      await medicine.save();
+
+      res.status(201).json(medicine);
     } catch (error) {
       console.log(error);
       next(error);

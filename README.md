@@ -1,9 +1,16 @@
 # API Documentation
 
+### Running Program:
+```
+npm install
+npm run dev
+```
+
 List of available endpoints:
 
 - `POST /userRegister`
 - `POST /userLogin`
+- `POST /medicine (aunthentication)`
 
 &nbsp;
 
@@ -57,6 +64,50 @@ _Response (200 - OK)_
 {
   "username": "string",
   "access_token": "string"
+}
+
+```
+
+&nbsp;
+
+## 3. POST /medicine
+
+Description:
+- Create a medicine
+
+Request:
+
+- headers:
+
+```json
+{
+  "access_token": "string"
+}
+```
+
+- body:
+
+```json
+{
+  "name": "string",
+  "category": "string",
+  "imgUrl": "string",
+  "price": "number",
+  "minQuantity": "string"
+}
+```
+
+_Response (201 - Created)_
+
+```json
+{
+  "name": "Olive Care Spray",
+  "category": "Antibacterial",
+  "imgUrl": "https://down-id.img.susercontent.com/file/cbde75473476b80f11e3e78303651ac5",
+  "price": 80000,
+  "minQuantity": "60 mL",
+  "_id": "64a589beb5be865aa8be25a4",
+  "__v": 0
 }
 
 ```

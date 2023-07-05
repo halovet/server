@@ -33,6 +33,11 @@ module.exports = (error, req, res, next) => {
       message = "password not match";
       break;
 
+    case "Invalid Token":
+      status = 400;
+      message = "you're not authenticate";
+      break;
+
     default:
       break;
   }
