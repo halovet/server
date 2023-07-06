@@ -34,8 +34,13 @@ module.exports = (error, req, res, next) => {
       break;
 
     case "Invalid Token":
-      status = 400;
+      status = 401;
       message = "you're not authenticate";
+      break;
+
+    case "Not Found":
+      status = 404;
+      message = "data not found";
       break;
 
     default:

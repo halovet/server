@@ -1,6 +1,7 @@
 const { comparePassword, signToken } = require("../helpers/helper");
 const User = require("../model/User");
 const Medicine = require("../model/Medicine");
+const { default: mongoose } = require("mongoose");
 
 module.exports = class StaffController {
   static async userRegister(req, res, next) {
@@ -66,6 +67,77 @@ module.exports = class StaffController {
       await medicine.save();
 
       res.status(201).json(medicine);
+    } catch (error) {
+      console.log(error);
+      next(error);
+    }
+  }
+
+  static async allMedicine(req, res, next) {
+    try {
+      let { page, limit, search } = req.query;
+      page ? page : (page = 1);
+      limit ? limit : (limit = 10);
+      search ? search : (search = "");
+
+      const allMedicine = await Medicine.find({
+        name: { $regex: search, $options: "i" },
+      })
+        .skip((page - 1) * limit)
+        .limit(limit)
+        .sort({ name: "asc" });
+
+      res.status(200).json(allMedicine);
+    } catch (error) {
+      console.log(error);
+      next(error);
+    }
+  }
+
+  static async medicineById(req, res, next) {
+    try {
+      const { id } = req.params;
+
+      if (!mongoose.Types.ObjectId.isValid(id)) throw { name: "Not Found" };
+
+      const medicine = await Medicine.findById(id);
+      if (!medicine) throw { name: "Not Found" };
+
+      res.status(200).json(medicine);
+    } catch (error) {
+      console.log(error);
+      next(error);
+    }
+  }
+
+  static async editMedicine(req, res, next) {
+    try {
+      const { id } = req.params;
+
+      if (!mongoose.Types.ObjectId.isValid(id)) throw { name: "Not Found" };
+
+      let updatedData = await Medicine.findByIdAndUpdate(id, req.body, {
+        new: true,
+      });
+      res.status(200).json(updatedData);
+    } catch (error) {
+      console.log(error);
+      next(error);
+    }
+  }
+
+  static async deleteMedicine(req, res, next) {
+    try {
+      const { id } = req.params;
+
+      if (!mongoose.Types.ObjectId.isValid(id)) throw { name: "Not Found" };
+
+      let deletedData = await Medicine.findByIdAndDelete(id);
+      if (!deletedData) throw { name: "Not Found" };
+
+      res
+        .status(200)
+        .json({ message: `data with id ${id} deleted successfully` });
     } catch (error) {
       console.log(error);
       next(error);
