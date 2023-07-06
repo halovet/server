@@ -9,6 +9,12 @@ router.post("/userLogin", StaffController.userLogin);
 
 // -- MEDICINE --
 router.post("/medicine", authenticationUser, StaffController.createMedicine);
-router.get("/allMedicine");
-
+router.get("/medicine", StaffController.allMedicine);
+router.get("/medicine/:id", StaffController.medicineById);
+router.patch("/medicine/:id", authenticationUser, StaffController.editMedicine);
+router.delete(
+  "/medicine/:id",
+  authenticationUser,
+  StaffController.deleteMedicine
+);
 module.exports = router;
